@@ -1,24 +1,28 @@
 #pragma once
 #include <string>
 #include <iostream>
-using std::string;
+using namespace std;
 class Matriz{
-    private:
-        string name;
+    protected:
+        char name;
         int size;
         double determinante;
         double** matrix;
     public:
-        Matriz(string,int);
+        Matriz(char,int,double**);
         ~Matriz();
-        double** Suma();
+        double** Suma(double**);
         void Incremento();
         void Decremento();
-        double** MultiplicacionEscalar();
-        double** ProductoMatrices();
-        double** SumaEspacio();
-        double** MultiplicacionEspacio();
+        double** MultiplicacionEscalar(double);
+        double** ProductoMatrices(double**);
+        double** SumaEspacio(double**);
+        double** MultiplicacionEspacio(double);
         double Determinante();
-        void Traspuesta();
+        double** Traspuesta();
         double** crearMatriz();
+        void Imprimir();
+        char getName();
+        double** getMatriz();
+        int getSize();
 };
